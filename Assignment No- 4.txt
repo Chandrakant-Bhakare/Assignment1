@@ -1,0 +1,105 @@
+Assignment No- 4
+
+1) Build a class Student which contains details about the Student and compile and run its
+instance.
+Solution
+import java.util.Scanner;
+public class Student{ 
+public static void main(String args[]){
+studentDetails  stu = new studentDetails();
+stu.acceptStudentDetails();
+stu.printStudentDetails();
+
+}
+}
+class studentDetails {
+    private String name;
+    private int rollNO;
+    private float marks;
+void acceptStudentDetails(){
+  try (Scanner sc = new Scanner(System.in)){
+  System.out.print("Enter Student name; ");
+  name = sc.next();
+  System.out.print("Enetr roll number:  ");
+  this.rollNO = sc.nextInt();
+  System.out.print("Enter Marks:  ");
+  this.marks = sc.nextFloat();
+}
+}
+void printStudentDetails(){
+    System.out.println("Name of Studen is : "+name);
+    System.out.println("The roll Nimber of Student is:  "+rollNO);
+    System.out.println("The Marks of Student is :   "+marks);
+}
+}
+
+2)Write a Vehicle class with overloaded methods that have a different number of parameters.
+Demonstrate calling these overloaded methods with various numbers of arguments.
+public class Vechicle {
+    public void honda(int price, float mileage,String name){       
+    System.out.println("The Price of Vehicle is "+price+ "\n The Mileage of Vehicel is: "+mileage+ "\nName   :   "+name);
+    }
+
+    public void honda(float mileage,String name,int price){
+    
+        System.out.println("The Price of Vehicle is "+price+ " The Mileage of Vehicel is: "+mileage+ "Name   :   "+name);}
+public static void main(String[] args) {
+    Vechicle vec = new Vechicle();
+    vec.honda(55000,25.5f,"Honda City");
+    vec.honda(56.25f,"Shine",1000000);
+
+
+3)Create a class Employee with multiple overloaded methods that have different parameter types (e.g.,
+int, double, String). Demonstrate calling each overloaded method with appropriate arguments.
+Solution
+package in.cdac;
+
+public class Empolyee {
+public void emp(String name, int id, float salary ) {
+System.out.println("Name: 	"+name+ "\nId:	 "+id+"\nSalary: "+salary);
+}
+public void emp(String name, float salary , int id) {
+System.out.println("Name: 	"+name+ "\nId:	 "+id+"\nSalary: "+salary);
+}
+public static void main(String args[]) {
+	Empolyee empDetails = new Empolyee();
+	empDetails.emp("Chandrakant Bhakare",120,45500.20f);
+	empDetails.emp("Sandeep", 55000f,320);
+	empDetails.emp("Anuja KArpe",110,45560.20f);
+	
+}
+}
+*******************************************************
+Second Solution
+package in.cdac;
+import java.util.Scanner;
+public class Empolyee {
+	String name;
+	int empId;
+	float salary;
+public void emp(String name, int id, float salary ) {
+System.out.println("Name: 	"+name+ "\nId:	 "+id+"\nSalary: "+salary);
+}
+public void emp(String name, float salary , int id) {
+System.out.println("Name: 	"+name+ "\nId:	 "+id+"\nSalary: "+salary);
+}
+void acceptRecord() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enetr Name: ");
+	name = sc.next();
+	System.out.print("Enetr Id:	");
+	empId = sc.nextInt();
+	System.out.print("Enetr Salary:	");
+	salary = sc.nextFloat();
+	
+}
+void printRecord() {
+	System.out.println("Name: 	"+name+ "\nId:	 "+empId+"\nSalary: "+salary);
+}
+public static void main(String args[]) {
+	Empolyee empDetails = new Empolyee();
+	empDetails.acceptRecord();
+	empDetails.printRecord();
+	
+}
+}
